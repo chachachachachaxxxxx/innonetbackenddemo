@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.innonetbackenddemo.mapper.ProjectDataMapper">
+    <resultMap id="BaseResultMap" type="com.example.innonetbackenddemo.entity.ProjectData">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="projectDataAbstract" property="projectDataAbstract"/>
+        <result column="Content" property="content" />
+        <result column="Author" property="author" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler" />
+        <result column="category" property="category" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler" />
+    </resultMap>
+
+    <select id="selectByPid" resultMap="BaseResultMap">
+        select * from projectData where id = #{pid}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from projectData
+    </select>
+
+    <insert id="createProject">
+        insert into projectData(id, name, projectDataAbstract, category, Author, Content) values(#{id},#{name}, #{abstract2}, #{category}, #{author}, #{content})
+    </insert>
+</mapper>
