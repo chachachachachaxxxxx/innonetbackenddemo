@@ -59,6 +59,28 @@
             <artifactId>fastjson</artifactId>
             <version>2.0.32</version>
         </dependency>
+
+        <!-- 引用开放平台SDK -->
+        <!-- 引用核心包 -->
+        <dependency>
+            <groupId>cn.com.antcloud.api</groupId>
+            <artifactId>antcloud-api-sdk</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <!-- 引用DTO包 -->
+        <dependency>
+            <groupId>cn.com.antcloud.api</groupId>
+            <artifactId>antcloud-api-bccr</artifactId>
+            <version>1.17.56</version>
+        </dependency>
+        <!-- 引用开放平台SDK结束 -->
+
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.17</version>
+        </dependency>
     </dependencies>
 
     <build>

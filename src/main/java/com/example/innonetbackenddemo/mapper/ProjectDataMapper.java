@@ -20,6 +20,8 @@ public interface ProjectDataMapper extends BaseMapper<ProjectData> {
     // @Insert("insert into ProjectData values(#{name}, #{abstract2}, #{category}, #{author}, #{content})")
     boolean createProject(long id, String name, String abstract2, String category, String author, String content);
 
+    @Update("update projectData set registerId = #{registerId} where id = #{pid}")
+    boolean uploadProject(long pid, String registerId);
     @Update("update Users set name=#{name},abstract=#{abstract2},category=#{category}, Author=#{author}, Content=#{content} where id =#{pid}")
     boolean updateProject(long pid, String name, String abstract2, JSON category, JSON author, String content);
 
