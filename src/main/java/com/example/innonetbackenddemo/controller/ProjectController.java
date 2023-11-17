@@ -108,9 +108,8 @@ public class ProjectController {
 
     }
 
-//    @PutMapping("/users/{uid}")
-//    public User updateUser(@PathVariable("uid") long uid, @RequestBody User user) {
-//        userMapper.updateUser(uid, user.getAuthority(), user.getUname(), user.getEmail());
-//        return userMapper.selectByUid(uid);
-//    }
+    @PutMapping("/projects/{pid}")
+    public boolean updateUser(@PathVariable("pid") long pid, @RequestBody ProjectData projectData) {
+        return projectDataMapper.updateProject(pid, projectData.getName(), projectData.getProjectDataAbstract(),  JSON.toJSONString(projectData.getCategory()), JSON.toJSONString(projectData.getAuthor()),projectData.getContent());
+    }
 }
